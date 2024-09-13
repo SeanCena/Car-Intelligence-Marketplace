@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+
+	<title>The Car Intelligence Marketplace</title>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+	<meta name='description' content='Our sophisticated A.I. judges your awful taste in music.' />
+	<meta name='news_keywords' content='music,spotify,data' />
+	
+	<link rel='preload' type='font/woff2' as='font' crossorigin href='https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Regular-Web.woff2'>
+	<link rel='preload' type='font/woff2' as='font' crossorigin href='assets/fonts/recoleta/recoleta.woff2'>
+
+	<link rel='stylesheet' type='text/css' href='stylesheets/style.css'>
+
+	<style>
+		@font-face {
+			font-family: 'Recoleta-Regular';
+			src: url('assets/fonts/CarMaxSharpSansDisp-Bold.woff2') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+	
+		@font-face {
+			font-family: 'Atlas Grotesk Web';
+			src: url('https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Regular-Web.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Regular-Web.woff') format('woff');
+			font-weight: 400;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+	</style>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+<main id='content'>
+
+<div class='intro'>
+    <div class="cover-wrapper"></div>
+    <div class="cover-score-wrapper">
+      <div class="cover-score">
+      </div>
+    </div>
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+
+            <div class="swiper-slide login-slide">
+                <div class="title-wrapper">
+                    <h1 class="hed" id="intro_title">Selling Your Vehicle?</h1>
+                    <p class="dek">Let our easy-to-use A.I. system calculate the price of your car.</p>
+                </div>
+                <div class="logging-in">
+					<!--RIP forms, enctype multipart/form-data doesn't work for some reason so very janky hack-->
+					<div class="button-main">
+						<input type="file" name="img" class="button-main" id="img">
+						<input type="submit" name="submit" id="submit-button">
+					</div>
+                </div>
+                <div class="bg-shelf-wrapper">
+
+                  <div class="bg-shelf">
+                    <img style="display: inline-block;" src="assets/images/car-vector.png" alt="">
+                  </div>
+                  <div class="gray-gradient">
+
+                  </div>
+                </div>
+                <div class="bylines">
+                  <p class="logo"> <span>A project by</span> <a alt="The Pudding" href="#"><img style="width: 204px; height: 28px;" src="assets/images/logo.png" /></a></p>
+                  <div class="privacy-names">
+                    <p class="names">Made by Isaac, Kentaro, Sean, & Yuya</p>
+                    <p class="privacy-q">Have questions or complaints? Good.</p>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gradient-wrapper">
+        <div class="gradient-overlay">
+
+        </div>
+        <div class="gradient">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1024" fill="none">
+                <circle cx="588" cy="579" r="677" fill="url(#paint0_linear)"/>
+                <circle cx="1349" cy="1189" r="677" fill="#FC7E37"/>
+                <circle cx="1658" cy="-104" r="677" fill="#E48586"/>
+                <circle cx="-164" cy="-136" r="677" fill="#764FFB"/>
+                <defs>
+                <linearGradient id="paint0_linear" x1="588" y1="-98" x2="588" y2="1256" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#62BCFF"/>
+                <stop offset="1" stop-color="#1A9CFC"/>
+                </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<div>
+	<div class="swiper-wrapper">
+		<!--insert-->
+		<div style="display:none; height:750px" id="data" class="swiper-slide login-slide">
+			<div class="title-wrapper">
+				<h2 class="hed">Data Summary</h2>
+				<p class="dek" id="summary"></p>
+				<table style="width: 100%; font-family: Recoleta-Regular; padding: 100px; padding-left: 100%; padding-right: 100%;">
+					<th colspan="2" style="background-image: linear-gradient(to right, rgba(255, 216, 168, 0.482), #ff9955, rgba(255, 216, 168, 0.482)); text-align: center;box-shadow: 0px 15px 30px rgba(108, 108, 108, 0.18)"><h1>Car Statistics</h1></th>
+					<tr>
+						<td style="text-align:right; width:50%; padding:20px;"><h1>Manufacturer</h1></td>
+						<td style="text-align:left; width:50%; padding:20px;"><h1 id="manufacturer"></h1></td>
+					</tr>
+					<tr>
+						<td style="text-align:right; width:50%; padding:20px;"><h1>Model</h1></td>
+						<td style="text-align:left; width:50%; padding:20px;"><h1 id="model"></h1></td>
+					</tr>
+					<tr>
+						<td style="text-align:right; width:50%; padding:20px;"><h1>Price Range</h1></td>
+						<td style="text-align:left; width:50%; padding:20px;"><h1 id="price"></h1></td>
+					</tr>
+				</table>
+			</div>
+			<div class="logging-in">
+				
+			</div>
+			<div class="bg-shelf-wrapper">
+
+			<div class="gray-gradient">
+
+			</div>
+			</div>
+			<div class="bylines">
+			<p class="logo"> <span>A project by</span> <a alt="The Pudding" href="#"><img style="width: 204px; height: 28px;" src="assets/images/logo.png" /></a></p>
+			<div class="privacy-names">
+				<p class="names">Made by Isaac, Kentaro, Sean, & Yuya</p>
+				<p class="privacy-q">Have questions or complaints? Good.</p>
+			</div>
+
+			</div>
+		</div>
+		<!--insert-->
+	</div>
+</div>
+
+</main>
+	<!--<script src='https://pudding.cool/assets/scripts/d3.v6.0.0.min.js'></script>-->
+	<script>
+		// this is so ugly but we gotta do what we gotta do
+		const submit = document.getElementById("submit-button");
+		const input = document.getElementById("img");
+		const stats = document.getElementById("data");
+		const intro = document.getElementsByClassName("intro")[0];
+		// REMEMBER vvv
+		const apiURL = "http://127.0.0.1:5000";
+		// REMEMBER ^^^
+
+		function displayStats(data){
+			// Display stats based on API response. (data) is already in json format
+			// 1,000 likes and I post Isaac's Google Cloud API key
+			const summary_DOM = document.getElementById("summary");
+			const manufacturer_DOM = document.getElementById("manufacturer");
+			const model_DOM = document.getElementById("model");
+			const price_DOM = document.getElementById("price");
+
+			document.body.style.cursor = "auto";
+			intro.style.display = "none";
+			stats.style.display = "inline-block";
+
+			var age = 2020 - data["CAR_YEAR"];
+			var manufacturer = data["CAR_MAKE"];
+			var model = String(data["CAR_YEAR"]) + " " + data["CAR_MODEL"] + " " + data["CAR_STYLE"];
+			var price = data["PRICE_LOWER"] + " - " + data["PRICE_UPPER"];
+
+			// shoutout to Kentaro for these lines
+			if(age < 5){
+				summary_DOM.innerHTML = "That's a fresh boat you got there! You'll rake in some fat stacks with a car as new as yours!";
+			}else if(age < 10){
+				summary_DOM.innerHTML = "Ahh, the well done medium rare type - not brand-new but definitely not old. A good amount will come your way!";
+			}else{
+				summary_DOM.innerHTML = "Yes, the veteran. I'm honored to have your car on the market!";
+			}
+			
+			manufacturer_DOM.innerHTML = " " + manufacturer;
+			model_DOM.innerHTML = " " + model;
+			price_DOM.innerHTML = " " + price;
+		}
+
+		function b64Callback(result, filetype, filext){
+			// Submit based64 image to API
+			var prefix = "data:" + filetype + ";base64,";
+			var b64_img = result.substr(prefix.length);
+			data = {
+				"img": b64_img,
+				"extension": filext
+			}
+			const http = new XMLHttpRequest();
+			http.open("POST", apiURL);
+			http.setRequestHeader("Content-Type", "application/json");
+			http.responseType = 'json';
+			http.onreadystatechange = function() {
+				if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+					if (this.response["error"]) {
+						error_msg(this.response["error"]);
+					} else {
+						displayStats(this.response);
+					}
+				}
+			}
+			http.send(JSON.stringify(data));
+		}
+
+		function error_msg(error) {
+			// Un-graceful error handling
+			alert("The application has encountered an error, please try again.\nError message: " + error);
+			console.error(error);
+			document.body.style.cursor = "auto";
+		}
+
+		submit.onclick = () => {
+			document.body.style.cursor = "wait";
+			// Dirty base64 hack due to my incompetence with html forms
+			var cur_img = input.files.item(0);
+			var filetype = cur_img.type.substr(0, 5);
+			if (filetype != "image") {
+				error_msg("file must be an image");
+			} else {
+				var filext = cur_img.type.substr(6);
+				var reader = new FileReader();
+				reader.readAsDataURL(cur_img);
+				reader.onload = () => { b64Callback(reader.result, cur_img.type, filext); };
+				reader.onerror = function (error) {
+					error_msg(error);
+				};
+			}
+		};
+	</script>
+</body>
+
+</html>
